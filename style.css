@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f0fdf4;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+:lang(ar) {
+    font-family: 'Cairo', sans-serif;
+}
+
+.page-section {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 100px;
+}
+
+.page-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dragging {
+    opacity: 0.9;
+    cursor: grabbing;
+    transform: scale(1.1);
+    z-index: 50;
+    will-change: transform;
+    -webkit-touch-callout: none;
+    transition: none !important;
+}
+
+.bin {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s;
+    touch-action: none;
+    will-change: transform, background-color;
+}
+.bin:active {
+    transform: scale(0.95);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #10B981;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.info-card {
+    transition: transform 0.2s;
+}
+.info-card:hover {
+    transform: translateY(-2px);
+}
+
+#waste-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    transition: transform 0.2s ease;
+}
