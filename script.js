@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const API_KEY = "";
+    const API_KEY = "AIzaSyBk4v-KzehKoHTjYkIyVsSvxGSEAMxuAh8";
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
     async function callGemini(payload) {
         try {
